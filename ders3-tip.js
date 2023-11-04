@@ -156,3 +156,92 @@ console.log(tgk); // 0 false-a cevrilir, qalan butun reqemler true olur.
 let pkg = "false";
 pkg = Boolean(pkg);
 console.log(pkg);
+
+// 3-cu hisse
+
+let abcde = 15;
+abcde = Boolean(abcde);
+console.log(abcde);
+
+let kgnh = true;
+kgnh = Number(kgnh);
+
+let hm = -1246697654354354354354354;
+hm = Boolean(hm);
+console.log(hm);
+
+let gtl = 0;
+gtl = Boolean(0);
+console.log(gtl);
+
+let thn = "alma";
+thn = Boolean(thn);
+console.log(thn);
+
+let pkj = "false";
+pkj = Boolean(pkj);
+console.log(pkj);
+
+// Type coercion
+
+console.log(5 + "3"); // String(5) "53"
+let fde = 5;
+let mnl = "3";
+let deb = fde + mnl;
+console.log(typeof deb);
+
+console.log(4 * "6");
+
+console.log(5 - "3");
+
+console.log("salam" + " ehmed");
+console.log("salam" * "ehmed");
+
+console.log("8" / 2);
+
+console.log(true + 5);
+
+console.log(true + "5");
+
+console.log(true * "5");
+
+console.log("2" + false);
+
+console.log("false" + false);
+
+console.log("false" * false);
+
+console.log(Number("false"));
+
+console.log(4 + null);
+
+console.log("4" + null);
+
+console.log(6 + undefined);
+
+console.log("6" + undefined);
+
+// Truthy & falsy values
+
+let hpk = 0;
+hpk = Boolean(0);
+console.log(hpk);
+
+let ped = "";
+ped = Boolean(ped);
+console.log(ped);
+
+let iht = null;
+iht = Boolean(iht);
+console.log(iht);
+
+let pkfd;
+pkfd = Boolean(pkfd);
+console.log(pkfd);
+
+console.log(Boolean(NaN));
+
+let dlk = "gtk";
+dlk = Boolean(dlk);
+console.log(dlk);
+
