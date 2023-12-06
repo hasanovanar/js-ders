@@ -85,6 +85,7 @@ console.log(fruits); */
 
 // Davami - 26-11-23
 
+/*
 const kom = ["Real", "Bayer", "PSG", "Roma"];
 
 // reverse() massivin elementlerini tersine cevirir
@@ -210,4 +211,48 @@ console.log(qk);
 
 const qkSpl = ofisKans.splice(1, 2);
 
-console.log(qkSpl);
+console.log(qkSpl); */
+
+// 3-12-2023 - Massiv-3 (son)
+
+// Massive element elave olunmasi
+
+const meyve = ["alma", "heyva", "banan", "xurma"];
+
+meyve.splice(1, 0, "kivi");
+
+console.log(meyve);
+
+meyve.splice(3, 0, "ananas");
+
+console.log(meyve);
+
+meyve.splice(2, "armud", "nar"); // sehv getdi
+
+console.log(meyve);
+
+meyve.splice(2, 0, "armud", "shaftali");
+
+console.log(meyve);
+
+// Massivde elementin deyisilmesi
+
+console.log(meyve.indexOf("ananas"));
+
+meyve.splice(6, 1, "avokado");
+
+console.log(meyve);
+
+meyve[6] = "mango";
+
+console.log(meyve);
+
+meyve.splice(1, 1, "ciyelek", "uzum");
+
+console.log(meyve);
+
+let shafnar = meyve.splice(4, 2, "mandarin", "tut", "alca");
+
+console.log(shafnar);
+
+console.log(meyve);
