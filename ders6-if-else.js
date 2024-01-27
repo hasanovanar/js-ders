@@ -45,6 +45,7 @@ const bal = 150;
 // 14-1-2024 if-else-davami.
 
 // Ededin tek ve ya cut olmasi.
+/*
 
 const eded = 22;
 
@@ -136,7 +137,61 @@ if (yer === 1) {
   console.log("Sen 1000 man qazandin");
 } else {
   console.log("Sen hec ne qazanmadin");
+} 
+*/
+
+// 21-yanvar-2024
+
+// Math.random() ===> 0 ve 1 arasinda onluq kesr hesablayir ve bu her defe deyishir
+
+console.log(Math.random());
+
+// 1 ve 6 arasinda ededi almaq ucun 1-ci addim Math.random() * 6
+
+console.log(Math.random() * 6);
+
+// Math.floor() ededi asagi tam edede qeder yuvarlaqlasdirir/ Mes 10.82 => 10, 9.85467 => 9
+// console.log(Math.floor(5.984));
+
+// Math.floor() - biz ala bilirik ancaq 0-dan 5-e qeder aliriq.
+
+// console.log(Math.floor(Math.random() * 6)); // bu bize verir 0, 1, 2, 3, 4, 5
+
+// Bir funk var - onun neticesi verir bize 0, 1, 2, 3, 4, 5
+// Bize lazimdir 1, 2, 3, 4, 5, 6
+
+// console.log(Math.floor(Math.random() * 6) + 1);
+
+const zer = Math.floor(Math.random() * 6) + 1;
+
+console.log(`Atilan zer ${zer}`);
+
+if (zer === 6) {
+  console.log("Hediyye soyuducu");
+} else if (zer === 5) {
+  console.log("Hediyye paltaryuyan");
+} else if (zer === 4) {
+  console.log("Hediyye tozsoran");
+} else {
+  console.log("Hediyye dushmur");
 }
 
+const xaricPasp = true;
+const ticket = false;
 
+console.log(xaricPasp && ticket);
 
+if (xaricPasp && ticket) {
+  console.log("Sen ucha bilersen");
+} else {
+  console.log("Sen ucha bilmezsen");
+}
+
+const money = true;
+const kart = false;
+
+if (money || kart) {
+  console.log("Sen odeye bilersen");
+} else {
+  console.log("Sen odeye bilmirsen");
+}
