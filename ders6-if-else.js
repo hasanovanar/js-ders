@@ -144,11 +144,11 @@ if (yer === 1) {
 
 // Math.random() ===> 0 ve 1 arasinda onluq kesr hesablayir ve bu her defe deyishir
 
-console.log(Math.random());
+// console.log(Math.random());
 
 // 1 ve 6 arasinda ededi almaq ucun 1-ci addim Math.random() * 6
 
-console.log(Math.random() * 6);
+// console.log(Math.random() * 6);
 
 // Math.floor() ededi asagi tam edede qeder yuvarlaqlasdirir/ Mes 10.82 => 10, 9.85467 => 9
 // console.log(Math.floor(5.984));
@@ -161,7 +161,7 @@ console.log(Math.random() * 6);
 // Bize lazimdir 1, 2, 3, 4, 5, 6
 
 // console.log(Math.floor(Math.random() * 6) + 1);
-
+/*
 const zer = Math.floor(Math.random() * 6) + 1;
 
 console.log(`Atilan zer ${zer}`);
@@ -194,4 +194,35 @@ if (money || kart) {
   console.log("Sen odeye bilersen");
 } else {
   console.log("Sen odeye bilmirsen");
+}
+*/
+
+// 4 Fevral 2024
+// Mesele shampun satilir 2 deneden cox alana ve bonus kartinda 200-den cox olana
+// 40 faiz endirim
+// shampunQiy = 7 man
+
+const shampunSay = 2;
+const bonusKard = 380;
+const shampunQiy = 7;
+
+// 40 faiz endirim === qiymet * 0.6
+
+if (shampunSay > 2 && bonusKard > 200) {
+  console.log(`Odenilsei mebleg: ${shampunSay * shampunQiy * 0.6}`);
+} else {
+  console.log(`Odenilesi mebleg: ${shampunSay * shampunQiy}`);
+}
+
+// Mesele shampun satilir 3 deneden cox alana yaxud kartinda 400-den cox bonus
+// olana 50 faiz endirim
+
+const shampunSay2 = 5;
+const bonus2 = 350;
+const shampunQiymet2 = 7;
+
+if (shampunSay2 > 3 || bonus2 > 400) {
+  console.log(`Odenilesi mebleg: ${shampunSay2 * shampunQiymet2 * 0.5}`);
+} else {
+  console.log(`Odenilesi mebleg: ${shampunSay2 * shampunQiymet2}`);
 }
