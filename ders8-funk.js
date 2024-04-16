@@ -79,6 +79,8 @@ helloGuest("John"); */
 
 // 1-4-24 ders
 
+/*
+
 function introduce(name, age) {
   console.log(`Hello, my name is ${name} and I am ${age} years old `);
 }
@@ -228,4 +230,266 @@ function test() {
   console.log(a);
 }
 
-console.log(test());
+console.log(test()); */
+
+// 8-4-2024
+
+// let number = 10;
+
+function oddEven(number) {
+  if (number % 2 === 0) {
+    console.log(`${number} is even`);
+  } else {
+    console.log(`${number} is odd`);
+  }
+}
+
+oddEven(7);
+
+oddEven(6);
+
+// default parameter
+
+function perim3(a, b, c) {
+  return a + b + c;
+}
+
+const tri1 = perim3(4, 2, 5);
+
+console.log(tri1);
+
+const tri2 = perim3(4, 2);
+
+console.log(tri2);
+
+// NaN - not a number
+
+// Funksiyaya duzgun sayda parametr vermeyende onu undefined sayir
+// 4 + 2 + undefined = NaN
+
+function perimDef(a, b, c = 5) {
+  return a + b + c;
+}
+
+const tri3 = perimDef(4, 7);
+
+console.log(tri3); // 4 + 7 + 5
+
+const tri4 = perimDef(4, 7, 8);
+
+console.log(tri4);
+
+// Neyi etmek olmaz
+// duzgun deyil
+function perimDef(a, b = 5, c) {
+  return a + b + c;
+}
+
+// const tri5 = perimDef(2, , 3) // xeta verecek
+const tri6 = perimDef(2, 3); // bunun neticesi NaN olacaq - a = 2, b =3, c = undefined
+
+console.log(tri6);
+
+// duzgun yazilis
+
+function perimDef2(a, c, b = 5) {
+  return a + b + c;
+}
+
+// 2 parametr default edirem
+
+function perimDefault(a, b = 3, c = 4) {
+  return a + b + c;
+}
+
+const tri7 = perimDefault(6);
+
+console.log(tri7);
+
+function perimDefault2(a = 7, b = 5, c = 8) {
+  return a + b + c;
+}
+
+const tri8 = perimDefault2();
+
+console.log(tri8);
+
+// Telebenin balina uygun teqaud funksiyasi
+
+function stipend(score) {
+  if (score > 600) {
+    console.log("Stipend will be 100 manat");
+  } else if (score > 500) {
+    console.log("Stipend will be 70 manat");
+  } else if (score > 300) {
+    console.log("Stipend will be 50 manat");
+  } else {
+    console.log("Student did not pass");
+  }
+}
+
+stipend(650);
+
+stipend(350);
+
+function travel(passport, ticket) {
+  if (passport && ticket) {
+    console.log("You can travel");
+  } else {
+    console.log("You cannot travel");
+  }
+}
+
+travel(true, false);
+
+travel(false, false);
+
+travel(true, true);
+
+function idAge(age) {
+  return age >= 16 // shert - condition
+    ? console.log("You can have ID card") // shert dogru olsa
+    : console.log("You cannot have ID card"); // shert dogru olmasa
+}
+
+idAge(20);
+
+idAge(12);
+
+// 40 faiz endirim === qiymet * 0.6
+
+function bonus(shampooNum, bonusCard, shampooPrice) {
+  if (shampooNum > 2 && bonusCard > 200) {
+    console.log(`You have to pay: ${shampooNum * shampooPrice * 0.6}`);
+  } else {
+    console.log(`You have to pay: ${shampooNum * shampooPrice}`);
+  }
+}
+
+bonus(3, 250, 5);
+
+bonus(2, 220, 5);
+
+function dice() {
+  const dice = Math.floor(Math.random() * 6) + 1;
+
+  console.log(`Dice: ${dice}`);
+
+  switch (dice) {
+    case 6:
+      console.log("You win a refrigerator");
+      break;
+    case 5:
+      console.log("You win a washing machined");
+      break;
+    case 4:
+      console.log("You win a vacuum cleaner");
+      break;
+    default:
+      console.log("You win nothing");
+  }
+}
+
+dice();
+
+dice();
+
+// Javascriptde funksiyalar 3 cur yaranir
+// Bizim indiye kimi kecdiyimiz funksiyalar Function declaration vasitesidir
+
+// Function expression
+
+function perimRect(a, b) {
+  return (a + b) * 2;
+}
+
+const rect1 = perimRect(4, 3);
+console.log(rect1);
+
+// Bunu cevirecem function expression kimi
+
+const perimExpr = function (a, b) {
+  return (a + b) * 2;
+};
+
+// Function expression = anonym function
+
+console.log(perimExpr(5, 4));
+
+function howAreYou() {
+  console.log("How are you?");
+}
+
+howAreYou();
+
+const howAreYouEx = function () {
+  console.log("How are you?");
+};
+
+howAreYouEx();
+
+// Objects = reference type
+
+const car = {
+  brand: "Porsche", // key-value pairs
+}; // Object literal usulu
+
+console.log(car);
+
+const carPorsche = {
+  brand: "Porsche",
+  model: "Panamera",
+  year: 2018,
+  price: 80000,
+  color: "black",
+};
+
+console.log(carPorsche);
+
+// model: 'Panamera' ==> model - property
+
+const home = {
+  region: "Yasamal",
+  floor: 5,
+  price: 150000,
+  "has Kupca": true,
+};
+
+console.log(home);
+
+// Property-ye baxmagin 2 usulu var
+// dot notation, bracket notation
+
+console.log(home.region);
+
+console.log(home.price);
+
+const homeFloor = home.floor;
+console.log(homeFloor);
+
+console.log(home["region"]);
+
+console.log(home["price"]);
+
+const person = {
+  firstName: "Samed",
+  lastName: "Veliyev",
+  birthYear: 1987,
+  isMarried: true,
+};
+
+// Object property-lereinin deyismesi
+person.isMarried = false;
+
+console.log(person);
+
+person.address = "Baku, Ahmedli 35";
+
+console.log(person);
+
+delete person.address;
+console.log(person);
+
+person.hasChildren = true;
+
+console.log(person);
