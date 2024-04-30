@@ -201,16 +201,229 @@
 // }
 
 // while
-let d = 2;
-while (d <= 10) {
-  console.log(d);
-  d = d + 3;
-}
+// let d = 2;
+// while (d <= 10) {
+//   console.log(d);
+//   d = d + 3;
+// }
 
 //################################# Do while
 
-let i = 2;
-do {
-  console.log(i);
-  i = i + 3;
-} while (i <= 10);
+// let i = 2;
+// do {
+//   console.log(i);
+//   i = i + 3;
+// } while (i <= 10);
+
+// ################################ 29-4-24 ##################################
+
+// 1-den 5-e qeder olan ededlerin cemlenmesi
+
+// 1 + 2 + 3 + 4 +5 + .. 100
+// sum = 0
+// sum = 0+1
+// sum = 1 + 2
+// sum = 1 + 2 + 3
+
+// let sum = 0;
+
+// for (let i = 1; i <= 5; i++) {
+//   sum = sum + i;
+// }
+
+// console.log(sum);
+
+// console.log(1 + 2 + 3 + 4 + 5);
+
+// 1-den 4-e kimi ededlerin vurulmasi
+
+// result = 1
+// result = 1 * 1
+// result = 1 * 2 ...
+// let result = 1;
+
+// for (let i = 1; i <= 4; i++) {
+//   result = result * i;
+// }
+
+// console.log(result);
+
+// console.log(1 * 2 * 3 * 4);
+
+// for (let i = 1; i <= 4; i++) {
+//   let result2 = 1; // yanlis
+//   result2 = result2 * i;
+// }
+
+// console.log(result2); // yanlis
+
+// 1-den 10-a qeder cut ededlerin toplanmasi
+
+// let sum2 = 0;
+
+// for (let i = 1; i <= 10; i++) {
+//   if (i % 2 === 0) {
+//     sum2 = sum2 + i;
+//   }
+// }
+// console.log(sum2);
+// console.log(2 + 4 + 6 + 8 + 10);
+
+// For-un Funksiya shekline salinmasi
+
+// function oneTo30() {
+//   for (let i = 1; i <= 30; i++) {
+//     console.log(i);
+//   }
+// }
+
+// oneTo30();
+
+// 1-den istenilen edede qeder olan ededleri konsol-a cixardin
+
+// function oneToN(n) {
+//   for (let i = 1; i <= n; i++) {
+//     console.log(i);
+//   }
+// }
+
+// oneToN(5);
+
+// 1-den istenilen edede qeder olan cut ededleri konsol-a cixardin
+
+// function oneToEven(m) {
+//   for (let i = 1; i <= m; i++) {
+//     if (i % 2 === 0) {
+//       console.log(i);
+//     }
+//   }
+// }
+
+// oneToEven(8);
+
+// 1-den istenilen edede qeder ededlerin cemini hesablayin
+
+// Funksiyada parametr olanda iceride o ishlenmelidir
+// Asagidaki funksiyada parametr ishlenmir ona gore o duzgun netice vermir
+
+// function sumOneToN(n) {
+//   let sum = 0;
+
+//   for (let i = 1; i <= 5; i++) {
+//     sum = sum + i;
+//   }
+
+//   return sum;
+// }
+
+// let sumOneTo5 = sumOneToN(5);
+
+// console.log(sumOneTo5);
+
+// let sumOneTo3 = sumOneToN(3);
+// console.log(sumOneTo3);
+
+// function sumOneToN(n) {
+//   let sum = 0;
+
+//   for (let i = 1; i <= n; i++) {
+//     sum = sum + i;
+//   }
+
+//   return sum;
+// }
+
+// let sum6 = sumOneToN(6);
+
+// console.log(sum6);
+
+// 1-den istenilen edede qeder cut ededlerin toplanmasi funksiyasi
+
+// function sumEven(k) {
+//   let sum2 = 0;
+
+//   for (let i = 1; i <= k; i++) {
+//     if (i % 2 === 0) {
+//       sum2 = sum2 + i;
+//     }
+//   }
+//   return sum2;
+// }
+
+// let sumE10 = sumEven(10);
+
+// console.log(sumE10);
+
+// let sumE6 = sumEven(6);
+// console.log(sumE6);
+
+// ###################### Loop-larin Array-lerde ishlenmesi ####################
+
+const arr = [2, 7, 15, 3, -5];
+
+// for (let i = 0; i <= ?; i++)
+
+// console.log(arr[0]); //2
+// console.log(arr[1]); // 7
+// console.log(arr[2]); // 15
+// console.log(arr[3]); // 3
+// console.log(arr[4]); // -5
+
+// for (let i = 0; i < 5; i++) {
+//   console.log(arr[i]);
+// }
+
+// Yuxaridaki yanasma qeyri-pesekar yanashmadir/
+// Proqram ozu array-in elementlerini sayini goturmelidir
+
+// length
+
+// const arrX = [5, 12, 1, -15, 5, 8, 12];
+// console.log(arrX.length);
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+// Array-in elementlerinin cemini tapmaq
+
+const arr2 = [4, 7, 3];
+let sumArr = 0;
+
+// for (let i = 0; i < arr2.length; i++) {
+//   sumArr = sumArr + i; // yanlidsidr, cunki i indexksdir
+// }
+
+// i - index
+
+for (let i = 0; i < arr2.length; i++) {
+  sumArr = sumArr + arr2[i]; // yanlidsidr, cunki i indexksdir
+}
+
+// i = 0; arr2[0] = 4
+// i =1; arr2[1] = 7
+// i =2; arr2[2] = 3
+
+console.log(sumArr);
+
+const arr3 = [12, 7, 8, 2, 4, 9];
+
+// Array-de olan ancaq tek ededleri consol-a ver
+
+for (let i = 0; i < arr3.length; i++) {
+  if (arr3[i] % 2 !== 0) {
+    console.log(arr3[i]);
+  }
+}
+
+// Array-de olan cut ededlerin cemini tapin
+
+let sumArrEven = 0;
+
+for (let i = 0; i < arr3.length; i++) {
+  if (arr3[i] % 2 === 0) {
+    sumArrEven = sumArrEven + arr3[i];
+  }
+}
+
+console.log(sumArrEven);
