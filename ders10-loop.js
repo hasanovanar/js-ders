@@ -387,6 +387,8 @@ const arr = [2, 7, 15, 3, -5];
 
 // Array-in elementlerinin cemini tapmaq
 
+/*
+
 const arr2 = [4, 7, 3];
 let sumArr = 0;
 
@@ -426,4 +428,214 @@ for (let i = 0; i < arr3.length; i++) {
   }
 }
 
-console.log(sumArrEven);
+console.log(sumArrEven); */
+
+// 20-05-2024
+/*
+const arr = [5, -3, 10, -12, -4, 7, 4]
+1.	Ancaq mənfi elementləri konsol-a ver. 
+2.	Ancaq müsbət elementlərin cəmini tap
+3.	Ancaq mənfi elementlərin cəmin tap
+4.	Ancaq müsbət elmentləri bir-birinə vur
+5.	Ancaq mənfi elementləri bir-birinə vur */
+/*
+const arrNum = [5, -3, 10, -12, -4, 7, 4];
+
+// 1. Loop yazmaq
+// (let i=0, i < 7)
+for (let i = 0; i < arrNum.length; i++) {
+  if (arrNum[i] < 0) {
+    console.log(arrNum[i]);
+  }
+} */
+
+// for in
+/*
+
+const arr8 = [10, 20, -15, 16];
+
+for (let i in arr8) {
+  console.log(arr8[i]);
+}
+
+// cem tap
+
+let sum8 = 0;
+
+for (let i in arr8) {
+  sum8 = sum8 + arr8[i];
+}
+
+console.log(sum8);
+
+*/
+
+// for of
+/*
+
+const arr9 = [12, 3, 5, 7, 6];
+
+// e - elementi bildirir
+for (let e of arr9) {
+  console.log(e);
+}
+
+// tek ededlerin cemi tap
+
+let sumOdd = 0;
+
+for (let e of arr9) {
+  if (e % 2 !== 0) {
+    sumOdd = sumOdd + e;
+  }
+}
+
+console.log(sumOdd); */
+
+/*
+
+const arr10 = [5, 8, 9, -12];
+
+arr10.push(4);
+
+console.log(arr10);
+
+// Arrayda olan ededlerden musbet olanlarini bir array-e yig
+
+const arr11 = [4, -2, 6, 9, -3];
+
+// [4, 6, 9]   [-2, -3]
+
+// Evvelce bosh [] elan edirik, sonra push() musbetleri ora yigacagiq/
+
+let posArr = [];
+
+for (let e of arr11) {
+  if (e >= 0) {
+    posArr.push(e); // [4] 3-cu devr [4, 6] 4-cu devr [4, 6, 9]
+  }
+}
+
+console.log(posArr); */
+
+// Arrayda olan ededlerden 2 array duzeldirik, 1-i musbet 1-i menfi
+/*
+const arr11 = [12, -4, 6, 8, -3, -7];
+
+let posArr2 = []; // musbet bosh array
+let negArr2 = []; // menfi bosh array
+
+for (let e of arr11) {
+  if (e >= 0) {
+    posArr2.push(e);
+  } else {
+    negArr2.push(e);
+  }
+}
+
+console.log(posArr2);
+console.log(negArr2);
+
+// Array-de olan ededleri 2-ye vur ve konsol-a ver
+
+const arr12 = [2, 4, 5];
+
+for (let e of arr12) {
+  console.log(e * 2);
+}
+
+// Array-de olan ededleri 2-ye vur ve onlardan bir array duzelt
+
+let arrDouble = [];
+
+for (let e of arr12) {
+  arrDouble.push(e * 2);
+}
+
+console.log(arrDouble);
+
+//Sehv olan
+/*
+let arrDouble2 = [];
+
+for (let e of arr12) {
+  arr12.push(e * 2); // sehv burdadir olmalidir arrDouble2.push()
+}
+
+console.log(arr12);
+console.log(arrDouble2); */
+
+/*
+
+const arr13 = [6, 7, 2, 8, 9];
+
+// Ancaq cut ededleri 5-le topla ve bir array-e yig
+
+let arrEven5 = [];
+
+for (let e of arr13) {
+  if (e % 2 === 0) {
+    arrEven5.push(e + 5);
+  }
+}
+
+console.log(arrEven5); */
+
+// Array-de olan tek ededlerin cemini tapan funksiya yaz.
+// Biz array-de emeliyyat edeceyimize gore funksiya parametrle olmalidir
+
+function sumOdd(arr) {
+  let sum = 0;
+
+  for (let e of arr) {
+    if (e % 2 !== 0) {
+      sum = sum + e;
+      // return sum cemi for-un icinde yazmaq sehvdir
+    }
+  }
+  return sum;
+}
+
+let testSum = sumOdd([4, 2, 3, 1, 6]);
+console.log(testSum);
+
+// Adi qaydada eyni deyisene let-le icaze verilmir
+/*let sum  = 0;
+let sum = 0;
+let sumOdd = 0 */
+
+// Sehv olan yazlisih
+function sumOddError(arr) {
+  let sum = 0;
+
+  for (let e of arr) {
+    if (e % 2 !== 0) {
+      sum = sum + e;
+      return sum; // cemi for-un icinde yerlesdirmek sehvdir
+    }
+  }
+}
+
+let testSum2 = sumOddError([4, 2, 3, 1, 6, 5, 9, 11]);
+console.log(testSum2);
+
+let testSum3 = sumOddError([4, 2, 1, 3, 6, 5]);
+console.log(testSum3);
+
+// Eger biz for-un icinde sum yaziriqsa ve onu return edirikse, 1-ci dovrede
+// funksiya dayanir
+
+// return netice verir ve funksiyadan cixir
+function sumOddTest(arr) {
+  let sum = 0;
+
+  for (let e of arr) {
+    if (e % 2 !== 0) {
+      sum = sum + e;
+    }
+    return sum; // cemi for-un icinde yerlesdirmek sehvdir
+  }
+}
+
+let testSum4 = sumOddTest([4, 2, 1, 3, 6, 5]);
+console.log(testSum4);
