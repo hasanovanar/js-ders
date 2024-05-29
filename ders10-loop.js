@@ -584,6 +584,7 @@ console.log(arrEven5); */
 // Array-de olan tek ededlerin cemini tapan funksiya yaz.
 // Biz array-de emeliyyat edeceyimize gore funksiya parametrle olmalidir
 
+/*
 function sumOdd(arr) {
   let sum = 0;
 
@@ -605,6 +606,7 @@ let sum = 0;
 let sumOdd = 0 */
 
 // Sehv olan yazlisih
+/*
 function sumOddError(arr) {
   let sum = 0;
 
@@ -638,4 +640,108 @@ function sumOddTest(arr) {
 }
 
 let testSum4 = sumOddTest([4, 2, 1, 3, 6, 5]);
-console.log(testSum4);
+console.log(testSum4); */
+
+// 28-05-2024
+
+// const arr6 = [20, 25, 10, 12];
+// let max = arr6[0];
+// for (let i of arr6) {
+//   if (i > max) {
+//     max = i;
+//   }
+// }
+
+// Array-de en boyuk ededin tapilmasi = max ededin tapilmasi
+
+// 1. Baza bir eded gotururuk - Array-de bu en 1-ci elementdir
+// 2. Array-butun elementlerine baxirsan/
+// 3. Onlari 1-1 muqayise edirsen
+// 4. En axirda en boyuyun goturursen.
+
+const arr7 = [10, 15, 8, 9, 7, 25, 20, 22];
+
+let max = arr7[0]; // max = 10
+
+for (let e of arr7) {
+  if (e > max) {
+    max = e;
+  }
+}
+
+console.log(max);
+
+// 1. max = 10
+// 2. 10 (arr elementi)  10 (max) muqayise edir 10 > 10 (false) blokun icine girmir.
+// 3. 15 (2-ci (elmenti) 10 (max) muqayise edir 15 > 10 (true) max = 15
+// 4. 8 (3.el)  15 (max)  8 > 15 (false bloka girmeyecek) max = 15 qalir
+// 5. 9 (4-cu elem) 9 > 15 (false bloka girmeyecek) max = 15 qalir
+// 6. 7 (5-ci elem) 7 > 15 ((false bloka girmeyecek) max = 15 qalir
+// 7. 25 (6-ci elem) 25 > 15 (true) max = 25
+// 8. 20 (7-ci elem) 20 > 25 (false bloka girmeyecek) max = 25 qalir.
+// 9. 22 (8-ci elem) 22 > 25 (false bloka girmeyecek) max = 25 qalir.
+
+// Array-de duplikat (tekrar) elementlerin yigisdirilmasi
+
+// const arr10 = [3, 12, 4, 3, 15, 12, 3, 12];
+
+// Bizim istediyimiz array-i tekrae elementlerden tmeizleyib
+// bele bir array almar [3, 12, 4, 15]
+
+// 1. Evvel bosh array duzeldirik
+// 2. arr10 loop edirik
+// 3. Eger arr10-un elementlerini 1-1 yoxlayib bosh array-i dolduruq.
+const arr10 = [3, 12, 4, 3, 15, 12, 3, 12];
+const unique = [];
+
+for (let e of arr10) {
+  if (!unique.includes(e)) {
+    unique.push(e);
+  }
+}
+
+console.log(unique);
+
+const arr11 = [12, 15, 67];
+
+if (arr11.includes(12)) {
+  console.log("arr11-de 12 var");
+}
+
+if (!arr11.includes(30)) {
+  console.log("arr11-de 30 yoxdur");
+}
+
+// [3, 12, 4, 3, 15, 12, 3, 12];
+
+// Netice [3, 12, 4, 15]
+
+// 1. []
+// 2. [3]
+// 3. [3, 12]
+// 4. [3, 12, 4]
+// 5. 3 burda olduguna gore [3, 12, 4] qalir
+// 6. [3, 12, 4, 15]
+// 7. 12 olduguna [3, 12, 4, 15] gore [3, 12, 4, 15] qalir
+// 8. 3 burda olduguna gore [3, 12, 4, 15] qalir
+// 9. 12 burda olduguna gore [3, 12, 4, 15] qalir
+
+// Esas Array-i loop edirem.
+// Eger Esas Array-in elementi Bosh array-de yoxdursa, onda onu Bosh array-e elave et.
+
+const esasArray = [3, 12, 4, 3, 15, 12, 3, 12];
+const boshArray = [];
+
+for (let e of esasArray) {
+  if (!boshArray.includes(e)) {
+    boshArray.push(e);
+  }
+}
+
+console.log(boshArray);
+
+// boshArray.includes(e) = var. Yox etmek ucun qabagina ! yazim
+// if (!boshArray.includes(e))  = Eger Esas Array-in elementi Bosh array-de yoxdursa
+// boshArray.push(e); = onda onu Bosh array-e elave et.
+
+// const arrayColor = ['green', 'blue', 'green', 'yellow', 'green']
