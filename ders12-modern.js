@@ -171,6 +171,8 @@ console.log(arrNew); */
 
 // 18-6-24
 
+/*
+
 const arr3 = [4, 8, 9, 11];
 arr3.push(7);
 console.log(arr3);
@@ -420,3 +422,101 @@ const product2 = {
 
 console.log(product1);
 console.log(product2);
+*/
+
+// 25-06-2024
+
+const prod = {
+  name: "soap", // name - KEY, soap - VALUE
+  price: 50, // price - KEY, 50 - VALUE
+};
+
+console.log(prod.name); // prod.name = soap
+console.log(prod.price); //50 ==> object.key = value
+
+console.log(prod["name"]); // soap
+console.log(prod["price"]); // 50
+
+const country1 = {
+  name: "Germany",
+  capital: "Berlin",
+  population: 80,
+};
+
+const country2 = {
+  name: "France",
+  capital: "Paris",
+  population: 70,
+};
+
+const populationTot = country1.population + country2.population;
+console.log(populationTot);
+
+// const populatoinTot = country1.population + country2.population + country3.population
+// + ... country50.population
+
+const country4 = {
+  name: "Spain",
+  capital: "Madrid",
+  population: 60,
+};
+
+const pop1 = country1.population;
+const popSp = country4.population;
+
+const { population } = country4; // const population = country4.population
+const { population: popSp2 } = country4; // const popSp2 = country4.population
+
+const { capital: capSp } = country4; // const capSp = country4.capital
+// capSp - variable ; popSp2 = variable
+
+// 3.3 Bele bir funksiya var. Bu funksiya ededler ucun nezerde tutulub
+
+function average(a, b, c) {
+  return (a + b + c) / 3;
+}
+
+// Bu funksiyani spread operatorundan istifade etmekler asagidaki array ucun de ishlet
+// yeni funksiyani cagirib neticede 8 almalisan
+const arr10 = [12, 15, -3];
+
+//average('a', 'b', 'c') // reqem deyil, ona gore sehv verecek
+
+console.log(average([12, 15, -3])); // NaN - not a number
+
+console.log(arr10); // array
+console.log(...arr10); // ededler
+
+console.log(average(...arr10)); // average(12, 15, -3)
+
+// 5.2 Ancaq tek ededlerin cemini tapan funksiya duzelt, adini sumOddNumbers qoy
+
+// Komek ucun array-de bu ishi goren funksiya
+function sumOddA(arr) {
+  let sum = 0;
+
+  for (let e of arr) {
+    if (e % 2 !== 0) {
+      sum = sum + e;
+    }
+  }
+  return sum;
+}
+
+// console.log(sumOddA(5, 2, 7, 3)); sehv
+console.log(sumOddA([5, 2, 7, 3])); // duz olacaq
+
+function sumOddNumbers(...nums) {
+  let sum = 0;
+
+  for (let e of nums) {
+    if (e % 2 !== 0) {
+      sum = sum + e;
+    }
+  }
+  return sum;
+}
+
+console.log(sumOddNumbers(5, 2, 7, 3));
+
+// (5, 2, 7, 3) ==> [5, 2, 7, 3]
