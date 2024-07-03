@@ -426,6 +426,8 @@ console.log(product2);
 
 // 25-06-2024
 
+/*
+
 const prod = {
   name: "soap", // name - KEY, soap - VALUE
   price: 50, // price - KEY, 50 - VALUE
@@ -519,4 +521,118 @@ function sumOddNumbers(...nums) {
 
 console.log(sumOddNumbers(5, 2, 7, 3));
 
-// (5, 2, 7, 3) ==> [5, 2, 7, 3]
+// (5, 2, 7, 3) ==> [5, 2, 7, 3]*/
+
+// 2-07-2024
+
+// Obyekt metodlarinin yeni yazilisi
+
+const robot1 = {
+  name: "Alutomo",
+  company: "Toyota",
+  stop: function () {
+    console.log("I stopped ");
+  },
+};
+
+console.log(robot1.stop());
+
+const robot2 = {
+  name: "Alutomo",
+  company: "Toyota",
+  stop() {
+    console.log("I stopped ");
+  },
+};
+
+console.log(robot2.stop());
+
+const product2 = {
+  name: "soap",
+  price: 2,
+  count: 3,
+  total: function (a, b) {
+    console.log(a * b);
+  },
+};
+
+console.log(product2.total(2, 3));
+
+const product3 = {
+  name: "soap",
+  price: 2,
+  count: 3,
+  total(a, b) {
+    console.log(a * b);
+  },
+};
+
+console.log(product3.total(3, 5));
+
+// Set - Tekrari olmayan elementler coxlugu
+
+//{'Apple', 'Apple'}
+
+const arr20 = [20, 12, 12, 14, 20, 16, 12, 20];
+
+const arr20Set = new Set(arr20);
+
+console.log(arr20Set);
+
+// Set-de siralama yoxdur
+
+// Setin elementlerin array-e cevirmek ucun ...spread operatorundan istifade edirik
+
+// {20, 12, 14, 16}
+
+const arr20Unique = [...arr20Set];
+
+console.log(new Set(["apple", "pear", "apple", "banana", "banana"]));
+
+const arr21 = ["Berlin", "Paris", "Berlin", "Rome", "Paris", "Berlin"];
+
+const arr21Unique = [...new Set(arr21)];
+// 1. {Berlin, 'Paris', 'Rome} 2. ['Berlin', 'Paris', 'Rome']
+console.log(arr21Unique);
+
+// Obyektlerde loop (for, while)
+
+const car = {
+  make: "BMW",
+  year: 2018,
+  price: 30000,
+};
+
+// Object.keys
+
+console.log(Object.keys(car));
+
+const carKeys = Object.keys(car);
+
+console.log(carKeys); // ['make', 'year', 'price']
+
+for (const e of carKeys) {
+  console.log(e);
+}
+
+// make year price
+
+const cafePrice = {
+  breakfast: 5,
+  lunch: 7,
+  dinner: 10,
+};
+
+// qiymetleri * 1.2
+
+// Effektiv olmayan kohne yol
+
+// cafePrice['breakfast'] = 5 * 1.2;
+// cafePrice['lunch'] = 7 * 1.2;
+// cafePrice['dinner'] = 10 * 1.2;
+
+// console.log(cafePrice);
+
+const cafePriceKeys = Object.keys(cafePrice);
+
+//
