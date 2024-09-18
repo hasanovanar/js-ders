@@ -165,10 +165,10 @@ if (answer) {
 // false, 0, "", null, undefined, NaN
 
 // qalanlari truthy value-lardir
-
+/*
 console.log(5 || false);
 
-console.log(false || 12);
+console.log(false || 12); */
 // || (OR) nece ishleyir
 /*
 1. Operandlari soldan sage qiymetlendirir
@@ -180,8 +180,9 @@ qiymeti qaytarir. Dayandigina gore ona short circuting deyirler
 
 // true ve false Boolean ifadeler
 
-console.log(Boolean(null));
-console.log(Boolean(undefined));
+// console.log(Boolean(null));
+
+/*
 console.log(Boolean("hello"));
 
 console.log(null || undefined || "hello"); // hello
@@ -194,4 +195,84 @@ console.log(null || NaN || -2 || undefined || 0);
 
 let text = "hello";
 
-alert(typeof text);
+alert(typeof text); */
+
+/*
+
+console.log(10 || 20); // 10
+
+console.log(20 || 10); // 20
+
+console.log(false || 0 || null);
+
+console.log(undefined || NaN || 0);
+
+console.log(null || undefined || "");
+
+console.log("a" * 2 || "" || null || false || undefined || 5 + 2);
+
+console.log(typeof ("a" * 2)); // number
+
+console.log("a" * 2); // NaN
+
+console.log(typeof NaN); // number
+
+console.log(Boolean("a" * 2));*/
+
+// let isPassword = true;
+
+// Bize lazimdir ki password - false olanda bize xeberdarliq olunsun
+
+// isPassword || alert("Password is incorrect");
+
+// Xalid
+/*
+if (isPassword != true) {
+  alert("Password is incorrect");
+}*/
+
+/*
+
+if (!isPassword) {
+  alert("Password is incorrect");
+} */
+/*
+let crossedRed = false;
+
+if (!crossedRed) {
+  alert("You are best driver");
+} 
+
+crossedRed || alert("You are best driver"); */
+
+//************************************ && Short circuting *******************
+
+/*
+
+1. Operandlari soldan saga qiymetlendirir
+2. Her birini true ve ya false-a cevirir. Eger netice false-dursa o zaman dayanir ve original
+qiymeti qaytarir. Dayandigina gore ona short circuting deyirler
+3. Eger yoxlanis zamani hamisi true-dirsa, axirincini qaytarir.
+
+
+// && (AND) 1-ci false value-ni gosterir, eger falsy yoxdursa, axirinci value-ni */
+
+console.log(5 && 15 && undefined); // undefined
+
+console.log(12 && "book" && null && 0); // null
+
+console.log(NaN && false && 6); // NaN
+
+console.log(5 && 15 && [25, 30] && "apple");
+
+let isClosed = false;
+/*
+if (isClosed) {
+  alert("We are closed");
+} */
+
+isClosed && alert("We are closed");
+
+let hasTicket = false;
+
+hasTicket || alert("You cannot fly");
