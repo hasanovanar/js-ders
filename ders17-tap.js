@@ -63,3 +63,24 @@ const person2 = {
 };
 
 // person1 obyektinin fullName funksiyasini person2-de ishlet
+// 2 usuldan itifade et - hem deyishen vasitesile, hem de birbasha
+
+///############################### 5 #######################################
+
+const person3 = {
+  firstName: "Jack",
+  lastName: "London",
+  fullName: function (city, age) {
+    console.log(
+      `${this.firstName} + " " + ${this.firstName} lives in ${city} and is ${age} years old`
+    );
+  },
+};
+
+const person4 = {
+  firstName: "Mary",
+  lastName: "Johnson",
+};
+
+// person3 obyektinin fullName funksiyasini person4-de ishlet. Parameter kimi isetenilen sheher adi
+// ve yash vere bilersen.
