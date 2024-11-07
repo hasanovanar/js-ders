@@ -72,7 +72,7 @@ const person3 = {
   lastName: "London",
   fullName: function (city, age) {
     console.log(
-      `${this.firstName} + " " + ${this.firstName} lives in ${city} and is ${age} years old`
+      `${this.firstName} ${this.firstName} lives in ${city} and is ${age} years old`
     );
   },
 };
