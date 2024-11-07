@@ -53,7 +53,7 @@ const person1 = {
   firstName: "Alice",
   lastName: "Smith",
   fullName: function () {
-    console.log(`${this.firstName} + " " + ${this.firstName}`);
+    console.log(`${this.firstName} ${this.lastName}`);
   },
 };
 
